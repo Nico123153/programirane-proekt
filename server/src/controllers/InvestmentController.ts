@@ -1,44 +1,36 @@
-import { Request, Response } from 'express';
-import { pool } from '../db';
+import { Request, Response } from "express";
+import { db } from "../db";
 
-export const InvestmentController = {
-    async list(req: Request, res: Response) {
-        const userId = Number(req.params.userId);
-        try {
-            const [rows] = await pool.query(
-                'SELECT * FROM investments WHERE user_id=?',
-                [userId]
-            );
-            res.json(rows);
-        } catch (err) {
-            res.status(500).json({ message: 'Database error' });
-        }
-    },
+// GET all investments
+export const getInvestments = async (req: Request, res: Response) => {
+    const [rows] = await db.query("SELECT * FROM investments");
+    res.json(rows);
+};
 
-    async add(req: Request, res: Response) {
-        const { userId, type, symbol, quantity, price } = req.body;
-        try {
-            const [result] = await pool.query(
-                'INSERT INTO investments (user_id, type, symbol, quantity, price) VALUES (?, ?, ?, ?, ?)',
-                [userId, type, symbol, quantity, price]
-            );
-            res.json({ id: (result as any).insertId });
-        } catch (err) {
-            res.status(500).json({ message: 'Database error' });
-        }
-    },
+// ADD investment + log history
+export const addInvestment = async (req: Request, res: Response) => {
+    const { symbol, type, quantity, price } = req.body;
+    const [result]: any = await db.query(
+        "INSERT INTO investments (symbol, type, quantity, price) VALUES (?, ?, ?, ?)",
+        [symbol, type, quantity, price]
+    );
+    const investmentId = result.insertId;
+    await db.query(
+        "INSERT INTO history (investmentId, action, date) VALUES (?, ?, NOW())",
+        [investmentId, "created"]
+    );
+    res.json({ message: "Investment added", id: investmentId });
+};
 
-    async remove(req: Request, res: Response) {
-        const userId = Number(req.params.userId);
-        const invId = Number(req.params.id);
-        try {
-            await pool.query(
-                'DELETE FROM investments WHERE id=? AND user_id=?',
-                [invId, userId]
-            );
-            res.json({ success: true });
-        } catch (err) {
-            res.status(500).json({ message: 'Database error' });
-        }
-    },
+// **Corrected DELETE function**
+export const deleteInvestment = async (req: Request, res: Response) => {
+    const id = req.params.id;
+    // Log delete first
+    await db.query(
+        "INSERT INTO history (investmentId, action, date) VALUES (?, ?, NOW())",
+        [id, "deleted"]
+    );
+    // Then delete the investment
+    await db.query("DELETE FROM investments WHERE id = ?", [id]);
+    res.json({ message: "Investment deleted" });
 };

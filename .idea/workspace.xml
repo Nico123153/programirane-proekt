@@ -4,21 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8df5bb75-08e8-42d7-a558-efd9f05f7737" name="Changes" comment="" />
+    <list default="true" id="8df5bb75-08e8-42d7-a558-efd9f05f7737" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/invest-frontend/src/HistoryLog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/HistoryController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/History.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/Investment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/routes/history.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/routes/investments.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/invest-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invest-frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/invest-frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/InvestmentController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/InvestmentController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/UserController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/db.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/investmentController.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Investment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/investments.ts" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/invest-frontend" />
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2xsK6jaRti5gxVowAJqZqYg3Mdb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,7 +52,10 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/nikol/WebstormProjects/untitled2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,6 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748721167384</updated>
       <workItem from="1748721168464" duration="2887000" />
+      <workItem from="1748805287109" duration="3370000" />
     </task>
     <servers />
   </component>

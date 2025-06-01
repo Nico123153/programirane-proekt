@@ -1,20 +1,19 @@
-import express from 'express';
-import cors from 'cors';
-import { login, getWallet } from './controllers/UserController'; // Note the change here!
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import investmentsRouter from "./routes/investments";
+import historyRouter from "./routes/history";
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// User routes
-// @ts-ignore
-app.post('/api/login', login);
-// @ts-ignore
-app.get('/api/wallet/:userId', getWallet);
+app.use("/api/investments", investmentsRouter);
+app.use("/api/history", historyRouter);
 
-// ... more routes here
-
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Backend listening on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
