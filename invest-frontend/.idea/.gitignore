@@ -1,0 +1,26 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Ignore node modules in both front‐end and back‐end
+node_modules/
+
+# Ignore build/output folders if you ever add them
+dist/
+build/
+
+# Ignore environment files
+.env
+
+# Ignore IDE settings
+.idea/
+
+# If you generate logs or coverage:
+logs/
+coverage/
+*.log
